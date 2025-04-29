@@ -6,8 +6,11 @@ const app = express();
 
 app.use(express.json());
 
+//connecting frontend
+app.use(cors());
+
 //routing
-app.use("/api/v1/", route);
+app.use("/api/v1", route);
 
 //default route
 app.get("/", (req, res) => {

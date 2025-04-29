@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import loginShoe from "../assets/loginShoe.avif";
-import {NavLink} from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className=" h-110 w-220 flex  m-auto mt-4">
@@ -40,10 +42,24 @@ const Login = () => {
                 id=""
                 className="block w-70 rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2"
               />
+
+              <div className="flex justify-center items-center">
+                <button
+                  onClick={(e) => {
+                    login(e);
+                  }}
+                  type="submit"
+                  className="bg-blue-600 text-white px-4 py-2  mt-4 rounded-2xl hover:bg-blue-700 transition-all"
+                >
+                  Submit
+                </button>
+              </div>
               <span className="block text-end my-2">Forget Password ?</span>
               <p className="my-2 ml-2">
                 Don't have an account?
-                <span className="text-blue-600 mx-2 ml-4"><NavLink to={"/Signup"}>Go to Signup</NavLink></span>
+                <span className="text-blue-600 mx-2 ml-4">
+                  <NavLink to={"/Signup"}>Go to Signup</NavLink>
+                </span>
               </p>
             </form>
           </div>
@@ -54,3 +70,9 @@ const Login = () => {
 };
 
 export default Login;
+
+
+
+
+
+
