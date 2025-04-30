@@ -1,12 +1,14 @@
 import express from "express";
 import connectDB from "./src/config/db.js";
 import route from "./src/route/user.route.js";
+import cors from "cors";
 
 const app = express();
 
 app.use(express.json());
 
-//connecting frontend
+//built in middleware
+app.use(express.json());
 app.use(cors());
 
 //routing
@@ -19,6 +21,17 @@ app.get("/", (req, res) => {
 
 //db connection
 connectDB();
+
+//error middleware
+app.use((err, req, res, next) => {
+  const statusCode = err.status || 500;
+  const errorMessage = err.message || "Error is there";
+  res.status(statusCode).json({
+    success: false,
+    statusCode,
+    errorMessage,
+  });
+});
 
 //server running
 app.listen(500, () => {

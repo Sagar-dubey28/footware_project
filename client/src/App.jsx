@@ -13,6 +13,7 @@ import Footer from "./components/footer";
 import Home from "./components/home";
 import Login from "./pages/login";
 
+import ShoeGallery from "./pages/shoeGallery";
 
 function App() {
   return (
@@ -31,12 +32,13 @@ function App() {
             <Route path="/Kids" element={<Kids />} />
             <Route path="/Sale" element={<Sale />} />
             <Route path="/Login" element={<Login />} />
-            <Route path="/Signup" element={<Signup/>} />
+            <Route path="/Signup" element={<Signup />} />
           </Routes>
+          <ShoeGallery />
         </main>
 
         <footer>
-           <Footer/>
+          <Footer />
         </footer>
       </Router>
     </>

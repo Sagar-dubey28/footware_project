@@ -13,6 +13,11 @@ const userSchema = mongoose.Schema(
       unique: true,
       trim: true,
     },
+    password: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     dob: {
       type: Date,
       required: true,
@@ -29,9 +34,18 @@ const userSchema = mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["active", "inactive", "blocked"],
+      enum: ["active", "inActive", "blocked"],
     },
+    role: {
+      type: String,
+      enum: ["user", "admin"],
+      default: "user",
+    },
+    profilePic: {
+      type: String
+    }
   },
+
   { timestamps: true }
 );
 
