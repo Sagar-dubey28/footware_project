@@ -1,5 +1,11 @@
 import React from "react";
 import shoe2 from "../assets/shoe2.avif"
+import shoeGrid1 from "../assets/shoeGrid1.jpg"
+import shoeGrid2 from "../assets/shoeGrid2.jpg"
+import shoeGrid3 from "../assets/shoeGrid3.jpg"
+import shoeGrid4 from "../assets/shoeGrid4.jpg"
+import shoeGrid5 from "../assets/shoeGrid5.jpg"
+
 
 
 
@@ -7,31 +13,31 @@ const products = [
   {
     id: 1,
     name: "Nike Air Max",
-    image: shoe2,
+    image: shoeGrid2,
     size: "col-span-2 row-span-2",
   },
   {
     id: 2,
     name: "Adidas Ultraboost",
-    image: shoe2,
+    image: shoeGrid3,
     size: "col-span-1 row-span-1",
   },
   {
     id: 3,
     name: "Puma RS-X",
-    image: shoe2,
+    image: shoeGrid1,
     size: "col-span-1 row-span-2",
   },
   {
     id: 4,
     name: "New Balance 550",
-    image: shoe2,
+    image: shoeGrid4,
     size: "col-span-1 row-span-1",
   },
   {
     id: 5,
     name: "Reebok Classic",
-    image: shoe2,
+    image: shoeGrid5,
     size: "col-span-1 row-span-1",
   },
 ];
@@ -39,7 +45,7 @@ const products = [
 
 const ShoeGallery = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-10">
+    <div className="max-w-6xl mx-auto px-4 py-10 mt-2">
       <h2 className="text-4xl font-bold text-center mb-8">Footwear Collection</h2>
       <div className="grid grid-cols-3 gap-4 auto-rows-[200px]">
         {products.map((product) => (
@@ -52,7 +58,7 @@ const ShoeGallery = () => {
               alt={product.name}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+            <div className="absolute inset-0 bg-black opacity-40 flex items-end p-4">
               <h3 className="text-white text-lg font-semibold">{product.name}</h3>
             </div>
           </div>
